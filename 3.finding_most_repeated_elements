@@ -4,10 +4,12 @@
 let arr= [1,1,2,3,4,4,3,3,3,2,1];
 let k =2;
 let obj ={};
- arr.map(item => obj[item] = 0);
+
  arr.forEach(item => {
-   if(obj.hasOwnProperty(item)) {
+   if(obj[item]) {
     return obj[item]++
+   } else {
+     obj[item]=0
    }
   });
 
