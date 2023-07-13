@@ -1,0 +1,12 @@
+// find duplicate elements from the string/array
+
+/* method -1 */
+let str="aaabcrtgfgss";
+
+let arry = str.split('');
+let duplicateArr = [];
+ arry.forEach((item, i) => {
+     if(arry.indexOf(item) !== i && duplicateArr.indexOf(item) == -1) 
+        duplicateArr.push(item) 
+  });
+console.log('duplicateArr', duplicateArr)
