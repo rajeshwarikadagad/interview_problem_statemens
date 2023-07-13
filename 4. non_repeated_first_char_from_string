@@ -1,7 +1,7 @@
 // finding non repeated first char from the given string 
 
 let obj ={};
-let str ="abcdAd";
+let str =" abc dAd";
 
  (str.toLowerCase()).split('').forEach(item => {
    if(obj.hasOwnProperty(item)) {
