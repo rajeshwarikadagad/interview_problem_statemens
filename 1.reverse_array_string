@@ -24,3 +24,13 @@ for(let i = str.length-1; i >= 0; i--) {
 
 console.log("reversedString - 2  ", reversedString);
 
+
+/* method-3*/
+ let lastIndex = this.rvrArrayList.length - 1;
+        for (let i = 0; i < this.rvrArrayList.length / 2; i++) {
+            let temp = this.rvrArrayList[i];
+            this.rvrArrayList[i] = this.rvrArrayList[lastIndex];
+            this.rvrArrayList[lastIndex] = temp;
+            lastIndex--;
+        }
+
