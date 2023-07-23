@@ -34,3 +34,10 @@ console.log("reversedString - 2  ", reversedString);
             lastIndex--;
         }
 
+
+#################################
+//How would you reverse words in a sentence?
+console.log(str.split(' ').map(word => word.split('').reverse().join('')).join(' '))
+
+
+
