@@ -29,11 +29,10 @@ for(let i=0; i<str.length; i++) {
 
 
 /* method-3 */
-  for (let i = 0; i < str.length; i++) {
-         
-            if (str.indexOf(str[i) !== i && duplicateArr.indexOf(num) === -1) {
-                duplicateArr.push(num);
-            }
-        }
+ for (let i = 0; i < str.length; i++) {
+  if (str.indexOf(str[i]) !== i && duplicateArr.indexOf(str[i]) === -1) {
+    duplicateArr.push(str[i]);
+  }
+}
 
-  console.log('element: ', duplicateArr);
+console.log(duplicateArr)
