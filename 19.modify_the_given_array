@@ -15,4 +15,16 @@ if(i%2 == 0) continue;
   arr.splice(i, 0, count)  ;
   count++;
 }
-console.log(arr)
+console.log(arr);
+
+
+##############################
+let arr  = [{a: 'a'}, {b: 'c'}, {c: 'd'},{d: 'a'}];
+
+    //Output = [‘a’ , ‘c’ , ‘d’, ‘a’];
+
+let newarr =[];
+arr.forEach(item =>
+  newarr.push(Object.values(item)[0])
+  );
+  console.log(newarr);
