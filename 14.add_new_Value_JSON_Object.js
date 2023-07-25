@@ -16,4 +16,18 @@ obj.forEach(item => {
          obj2.push({'id': item.id, 'name':[item.name]});
       }
    });
+console.log(obj2);
+
+
+/* method-2 */
+for(let i=0; i<obj.length; i++) {
+  obj2.push({'id': obj[i].id, 'name':obj[i].name})
+  for(let j=i; j<obj.length; j++) {
+    if(i !==j && obj[i].id == obj[j].id) {
+       let temp =obj[i].name;
+       obj2[i].name = [temp,obj[j].name]
+       obj.splice(j, 1);
+    }
+  }
+}
 console.log(obj2)
