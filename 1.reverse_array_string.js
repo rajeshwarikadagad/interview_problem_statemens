@@ -12,7 +12,7 @@ let reversedString = '';
 console.log("reversedString - 1 ", reversedString);
 console.log('reverse arr ', arr.reverse())
 
-######################################################
+//######################################################
 
 /* method -2  for loop*/
 
@@ -35,7 +35,7 @@ console.log("reversedString - 2  ", reversedString);
         }
 
 
-#################################
+//#################################
 //How would you reverse words in a sentence?
 console.log(str.split(' ').map(word => word.split('').reverse().join('')).join(' '))
 
