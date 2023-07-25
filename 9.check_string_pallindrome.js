@@ -19,7 +19,7 @@ console.log('pallindrome: ', isPallindrome);
 
 
 
-##############################
+//##############################
 //check whether a give string can be rearranged as a pallindrome or not 
 
 let obj ={};
