@@ -24,8 +24,8 @@ for(let i=0; i<obj.length; i++) {
   obj2.push({'id': obj[i].id, 'name':obj[i].name})
   for(let j=i; j<obj.length; j++) {
     if(i !==j && obj[i].id == obj[j].id) {
-       let temp =obj[i].name;
-       obj2[i].name = [temp,obj[j].name]
+       let temp =obj2[i].name;
+       obj2[i].name = [...temp,obj[j].name];
        obj.splice(j, 1);
     }
   }
