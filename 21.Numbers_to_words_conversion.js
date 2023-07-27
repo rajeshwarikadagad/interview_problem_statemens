@@ -21,7 +21,7 @@ function translate(num){
   } else if(num < 20) {
    word = double_digit[num-10] + ' ';
   } else if(num < 100) {
-    word = below_hundred[(num - num%10)/10 - 2] + ' ' + translate(num % 10);
+  word = below_hundred[Math.floor(num/10) - 2] + ' ' + translate(num % 10); // (num - num%10)/10 
 } else if(num < 1000) {
   word = single_digit[Math.trunc(num/100)] + ' Hundred ' + translate(num % 100);
 } else if( num < 1000000) {
