@@ -5,6 +5,11 @@
 let arr = [1,4,3,5,2,6,19,-1];
 // console.log(arr.sort((a,b) => a-b));
 
+var InputArr = [{ p: 4 }, { p: 2 }, { p:9 }, { p: 6 }]; // sorting array of objects
+let sortedArr = InputArr.sort((a,b) => a.p - b.p)
+console.log(sortedArr)
+
+
 /*method -2  using for loop  selection sort*/
 for(let i =0; i<arr.length; i++) {
   for(let j=0; j<arr.length; j++) {
