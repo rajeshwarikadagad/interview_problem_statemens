@@ -1,0 +1,20 @@
+ var InputArr = [{ p: 4 }, { p: 2 }, { p:9 }, { p: 6 }];
+//Output should be:
+//var outputArr = [{p:2},{},{p:4},{},{p:6},{},{},{p:9}];
+
+var outputArr =[];
+var sortedArr = InputArr.sort((a,b) => a.p - b.p);
+var minNum = sortedArr[0].p
+
+for(let i=0; i< sortedArr.length; i++) {
+
+  if(sortedArr[i].p === minNum) {
+    outputArr.push(sortedArr[i]);
+  } else {
+    outputArr.push({});
+    i--;
+  }
+  minNum++;
+}
+
+console.log(JSON.stringify(outputArr));
