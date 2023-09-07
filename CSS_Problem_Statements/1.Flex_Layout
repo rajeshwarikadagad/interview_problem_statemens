@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .flex-container {
+    display: flex;
+    list-style: none;
+    background-color: rgb(109, 108, 108);
+    border: 1px solid rgb(19, 18, 18);
+    padding: 5px;
+  }
+  
+  .flex-container > li {
+    width: 100%;
+    border: 3px solid lightblue;
+    background-color: rgb(36, 105, 148);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+  }
+        </style>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+   
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script src="src/index.js"></script>
+
+    <ul class="flex-container">
+      <li>I am small</li>
+
+      <li>I have more content than the very small item.</li>
+
+      <li>
+        I have lots of content. So much content that I don't know where it is
+        all going to go. I'm glad that CSS is pretty good at dealing with
+        situations where we end up with more words than expected!
+      </li>
+    </ul>
+  </body>
+</html>
