@@ -6,7 +6,21 @@ let obj =[
    {id:3,name:"e"}
   ];
   // Expected Output: [{id:1,name:["a","d"]},{id:2,name:"b"},{id:3,name:["c","e"]}
-  
+
+ var res = {};
+
+ for(let i=0; i< obj.length; i++) {
+   if(!res[obj[i].id]) {
+     res[obj[i].id] = obj[i].name
+   } else {
+     let temp = res[obj[i].id];
+     res[obj[i].id] = [];
+    res[obj[i].id].push(temp,obj[i].name)
+   }
+ }
+ console.log(JSON.stringify(res));
+
+/***********************/
 let obj2 =[];
 obj.forEach(item => {
     let index = obj2.findIndex(ele => ele.id== item.id) 
