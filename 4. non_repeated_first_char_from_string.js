@@ -12,3 +12,23 @@ let str =" abc dAd";
   });
 let keysSorted =Object.keys(obj).find(item => obj[item] == 1)
 console.log(keysSorted);
+
+
+/****************************/
+let ch ='';
+let arr = str.toLowerCase().split('');
+for(let i =0; i<arr.length; i++) {
+  let isUni = true;
+ for(let j=0; j<arr.length; j++) {
+
+    if(arr[i] === arr[j] && i !==j) {
+      isUni = false;
+    }
+   
+ }
+ if(isUni) {
+  ch=arr[i];
+break ;
+}
+} 
+console.log(ch) ;
