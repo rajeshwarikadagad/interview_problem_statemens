@@ -1,3 +1,4 @@
+//// the 2 elements from an array whose sum is equal to the given number
 var arr=[2,5,3,4,7,8,6];
 var num = 10;
 var out=[];
@@ -10,3 +11,25 @@ for(let i=0; i<arr.length; i++) {
   }
 } 
 console.log(out);
+/******************************************/
+//The sum of minimum and maximum elements of all sub-array of size B.
+/* Explanation:
+*Subarrays of size 4 are :
+*[2, 5, -1, 7], min + max = -1 + 7 = 6
+*[5, -1, 7, -3], min + max = -3 + 7 = 4
+*[-1, 7, -3, -1], min + max = -3 + 7 = 4
+*[7, -3, -1, -2], min + max = -3 + 7 = 4
+*Sum of all min & max = 6 + 4 + 4 + 4 = 18
+*Output - 18
+*/
+var A = [2, 5, -1, 7, -3, -1, -2];
+var B = 4;
+
+let arr=[];
+for(let i=0; i<B; i++) {
+ 
+  let arrs = A.slice(i, i+4)
+let sum = Math.min(...arrs) + Math.max(...arrs);
+  arr.push(sum);
+}
+console.log(arr.reduce((a,b)=> a+b));  
