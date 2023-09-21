@@ -29,6 +29,6 @@ for(let i=0;i<str.length;i++) {
  obj[str[i]] = obj[str[i]] ? obj[str[i]]+1 : 1;
 }
 console.log(obj)
-console.log((Object.values(obj).filter(count => count ==1).length) <= 1? 'it s a palindrome ' : 'not a pallindrome')
+console.log((Object.values(obj).filter(count => count%2 ==1).length) <= 1? 'it s a palindrome ' : 'not a pallindrome')
 
 
