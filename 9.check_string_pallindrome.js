@@ -20,15 +20,39 @@ console.log('pallindrome: ', isPallindrome);
 
 
 //##############################
-//check whether a give string can be rearranged as a pallindrome or not 
-
-let obj ={};
+//check whether a give string can be rearranged as a pallindrome or not , if yes then rearrange the string as palindrome
 let str ="civci";
+let obj ={};
 
 for(let i=0;i<str.length;i++) {
- obj[str[i]] = obj[str[i]] ? obj[str[i]]+1 : 1;
+ obj[str[i]] ? obj[str[i]]++ : obj[s[i]] = 1;
 }
-console.log(obj)
-console.log((Object.values(obj).filter(count => count%2 ==1).length) <= 1? 'it s a palindrome ' : 'not a pallindrome')
+console.log(obj);
+
+let ch = '';
+let isPallindrome = Object.keys(obj).filter(item => {
+  if(obj[item]%2 !== 0){
+    ch = item;
+    return true;
+  }
+}).length <= 1;
+
+console.log(isPallindrome ? 'it s a palindrome ' : 'not a pallindrome');
+
+// re arranging a string as palindrome
+if (isPallindrome) {
+  str =str.split('').sort().join('');  
+  let arr = ch;
+  for(let i=0; i< s.length; i++) {
+   if(s[i] !==ch) {
+     if(i%2 == 0) {
+      arr = s[i] + arr;
+    } else {
+      arr = arr + s[i];
+    }
+  }
+ }
+}
+console.log(arr)
 
 
