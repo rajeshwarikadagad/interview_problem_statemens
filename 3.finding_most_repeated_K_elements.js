@@ -7,9 +7,9 @@ let obj ={};
 
  arr.forEach(item => {
    if(obj[item]) { //obj.includes(item)
-    return obj[item]++
+    obj[item]++;
    } else {
-     obj[item]=0
+     obj[item]=1;
    }
   });
 
