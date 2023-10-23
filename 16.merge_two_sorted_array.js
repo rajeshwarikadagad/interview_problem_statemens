@@ -12,8 +12,8 @@ for(let i =0; i<=arrLength; i++) {
     mergedArr.push(arr1[i],arr2[i]);
    
   } else {
-    arr2[i] || arr2[i] == 0 ?  mergedArr.push(arr2[i]): '';
-    arr1[i] || arr1[i]==0 ? mergedArr.push(arr1[i]): '';
+    (arr2[i] || (arr2[i] == 0)) ?  mergedArr.push(arr2[i]): '';
+    (arr1[i] || (arr1[i]==0)) ? mergedArr.push(arr1[i]): '';
   }
 
 }
