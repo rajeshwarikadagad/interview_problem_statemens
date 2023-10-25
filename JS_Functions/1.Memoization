@@ -1,0 +1,53 @@
+// memoization example for addition and multiplication
+ 
+ var memoObject = {};
+ var memoObject2 = {};
+
+  // memoization function
+function memonizedFun(func) {
+  console.log('func', func.name == 'funcA');
+  return function (inPutVal) {
+    if (func.name == 'funcA') {
+      return checkval(inPutVal, func, memoObject);
+    } else {
+      return checkval(inPutVal, func, memoObject2);
+
+    }
+  } 
+}
+
+function checkval(inPutVal, func, memoObject) {
+  if (memoObject[inPutVal]) {
+    console.log('Do not Call function ' + func.name);
+    return memoObject[inPutVal];
+  } else { 
+    console.log('Call function ' + func.name);
+    let val = func(inPutVal);
+    return memoObject[inPutVal] = val;
+  }
+}
+
+// call back function
+function funcA(input) {
+  return input * 6;
+}
+
+// call back function
+function funcB(input) {
+  return input + 10;
+}
+
+
+var memA = memonizedFun(funcA);
+var memB = memonizedFun(funcB);
+
+console.log(memA(1)); //Call functiuon funcA
+console.log(memA(2)); //Call functiuon funcA
+console.log(memA(3));;//Call functiuon funcA
+console.log(memA(2)); //Do not call function funcA
+console.log(memA(1)); //Do not call function funcA
+
+console.log(memoObject)
+console.log(memB(1)); //Call functiuon funcB
+console.log(memB(2)); //Call functiuon funcB
+console.log(memB(2)); //Do not call function funcB
