@@ -1,4 +1,9 @@
-// memoization example for addition and multiplication
+// memoization example for addition and multiplication.
+// Def:It is an optimization technique that makes applications more efficient and hence faster by cacheing the result of sub problems.
+// The concept of memoization in JavaScript relies on two concepts:1. Closures,  2. Higher Order Functions.
+
+
+
  
  var memoObject = {};
  var memoObject2 = {};
