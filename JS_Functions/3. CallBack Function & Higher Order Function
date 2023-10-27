@@ -4,11 +4,14 @@
 // Note:
 // When you pass a function as an argument, remember not to use parenthesis.
 
+// In the real world, callbacks are most often used with asynchronous functions.
+// A typical example is JavaScript setTimeout().
+
 // Right: myCalculator(5, 5, myDisplayer);
 
 // Wrong: myCalculator(5, 5, myDisplayer());
 
-// ----------------Example ----------------------
+// ----------------Example 1----------------------
 function displayVal(res) {
 console.log('result: '+ res);
 }
@@ -20,7 +23,14 @@ function calculator(num1, num2, callBack) {
 }
  
 calculator(2, 3, displayVal);
+//-----------------------------Example 2--------------------
+function display() {
+console.log('Hello Raji');
+}
 
+
+ 
+setTimeout(display,3000);
 
 //-------------------------> higher order function-------------------------------
 // A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.
