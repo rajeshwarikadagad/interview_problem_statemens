@@ -1,0 +1,30 @@
+// generate possible sub arrays from an array and sum it
+
+function generateSubarrays(arr) {
+  const subarraysList = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let subarray = [];
+    for (let j = i; j < arr.length; j++) {
+      subarray.push(arr[j]);
+      subarraysList.push([...subarray]);
+    }
+  }
+
+  return subarraysList;
+}
+
+// Example usage:
+const originalArray = [20,-5, -1];
+const result =[];
+const subarrays = generateSubarrays(originalArray);
+console.log(subarrays);
+
+for(let i=0; i<subarrays.length; i++) {
+     let sum = 0;
+     for(let j=0; j< subarrays[i].length; j++) {
+       sum += subarrays[i][j];
+      }
+      result.push(sum); 
+}
+console.log(result) ;
