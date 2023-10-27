@@ -67,6 +67,7 @@ console.log(res);
 //----------------------------------> Partial Application-------------------------------
 
 // Partial application allows us to fix a function's arguments. 
+// partial application, which fixes the value of some of a function’s arguments without fully evaluating the function.
 
 //parial application
 
