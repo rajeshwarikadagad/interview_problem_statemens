@@ -56,3 +56,32 @@ console.log(memoObject)
 console.log(memB(1)); //Call functiuon funcB
 console.log(memB(2)); //Call functiuon funcB
 console.log(memB(2)); //Do not call function funcB
+
+
+// ------------------------ Fib example
+function memoize(fn) {
+
+  return function (n) {
+    // console.log(n);
+    return fib(n);
+  }
+}
+
+function fib(n) {
+  if (n <= 1) return n;
+  else {
+    if (memoizeObj[n]) {
+      // console.log('memoized '+ obj[n]);
+      return memoizeObj[n];
+    } else {
+      memoizeObj[n] = fib(n - 1) + fib(n - 2);
+      // console.log('call fun ' + obj[n]);
+    }
+    console.log(memoizeObj[n])
+    return memoizeObj[n];
+  }
+
+}
+var memoizeObj = {};
+var res = memoize(fib);
+res(5);
