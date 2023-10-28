@@ -1,0 +1,21 @@
+
+
+function groupBy(arr, fn) {
+  const groups = {};
+
+  arr.forEach((item) => {
+    const key = fn(item);
+    if (!groups[key]) {
+      groups[key] = [];
+    }
+    groups[key].push(item);
+  });
+
+  return groups;
+}
+
+// Example usage:
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const grouped = groupBy(arr, (item) => (item % 2 === 0 ? 'even' : 'odd'));
+
+console.log(grouped);
