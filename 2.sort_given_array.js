@@ -24,7 +24,7 @@ for(let i =0; i<arr.length; i++) {
 console.log(arr);
 
 
-/* method -3 using single for loop */
+/* method -3 using single for loop  Bubble sort*/
 let s = [4, 6, 3, 1, 2];
 for (let i = 0; i < s.length;) {
     if (s[i] > s[i + 1]) {
@@ -38,5 +38,35 @@ for (let i = 0; i < s.length;) {
     }
 }
 console.log(s);
+
+
+/* method -4 using single for loop  Quick sort*/
+
+
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivot = arr[0];
+  const left = [];
+  const right = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+// Example usage:
+const arrayToSort = [4, 2, 8, 1, 6, 3, 9, 5, 7];
+const sortedArray = quickSort(arrayToSort);
+console.log(sortedArray);
+
 
 
