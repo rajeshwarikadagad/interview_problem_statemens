@@ -1,0 +1,36 @@
+/// sorting array of numbers, string and objects
+
+Array.prototype.myArraySort = function(compareFunction) {
+  for (let i = 0; i < this.length - 1; i++) {
+    for (let j = 0; j < this.length - i - 1; j++) {
+      if (compareFunction(this[j], this[j + 1]) > 0) {
+        // Swap elements if they are in the wrong order
+        
+        [this[j], this[j + 1]] = [this[j + 1], this[j]];
+        
+        //const temp = this[j];
+        //this[j] = this[j + 1];
+        //this[j + 1] = temp;
+      }
+    }
+  }
+};
+
+// Example usage for sorting numbers
+const numbersArray = [3, 1, 4, 1, 5, 9, 2, 6, 5];
+numbersArray.myArraySort((a, b) => a - b);
+console.log(numbersArray);
+
+// Example usage for sorting strings
+const stringsArray = ['apple', 'banana', 'cherry', 'date', 'fig'];
+stringsArray.myArraySort((a, b) => a.localeCompare(b));
+console.log(stringsArray);
+
+// Example usage for sorting objects by a specific key
+const objectsArray = [
+  { name: 'John', age: 30 },
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 35 },
+];
+objectsArray.myArraySort((a, b) => a.age - b.age);
+console.log(objectsArray);
