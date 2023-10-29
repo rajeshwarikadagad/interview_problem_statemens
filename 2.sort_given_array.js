@@ -24,7 +24,7 @@ for(let i =0; i<arr.length; i++) {
 console.log(arr);
 
 
-/* method -3 using single for loop  Bubble sort*/
+/* method -3 using single for loop  sort*/
 let s = [4, 6, 3, 1, 2];
 for (let i = 0; i < s.length;) {
     if (s[i] > s[i + 1]) {
@@ -59,7 +59,7 @@ myArray.myArraySort();
 console.log(myArray);
 
 
-/* method -4 using single for loop  Quick sort*/
+/* method -4   Quick sort*/
 
 
 function quickSort(arr) {
