@@ -1,0 +1,28 @@
+// Debounce exaple
+
+
+
+function debounce(func, delay) {
+  let timeoutId;
+
+  return function (...args) {
+  //   const context = this;
+
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func();
+    }, delay);
+  };
+}
+
+// Example usage:
+const debouncedFunction = debounce(() => {
+  console.log('Debounced function called');
+}, 1000);
+
+// Simulate multiple rapid function calls
+debouncedFunction(); // Will not execute immediately
+debouncedFunction(); // Will not execute immediately
+   
+// After waiting for 1000ms (1 second) since the last call, the function will execute.
+ 
