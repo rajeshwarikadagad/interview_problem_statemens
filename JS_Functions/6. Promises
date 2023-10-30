@@ -94,3 +94,35 @@ deleteBook(1)
     console.error('Delete Error:', error.message);
   });
 
+//--------------------------REST API GET ------------------------
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Replace this URL with your actual endpoint
+    const url = 'https://jsonplaceholder.typicode.com/posts/1';
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+// Example usage:
+fetchData()
+  .then((data) => {
+    console.log('Data received:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+
