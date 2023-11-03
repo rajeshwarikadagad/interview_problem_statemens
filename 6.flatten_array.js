@@ -38,5 +38,21 @@ function flattenDeep(arr) {
 }
 const nestedArray = [1, [2, [3, 4], 5], 6];
 const flattenedArray = flattenDeep(nestedArray);
+//-----------------------------method-6 flattenning array with depth---------------------------------//
+function flattenArray(arr, depth) {
+  if (depth === 0) {
+    return arr;
+  }
+
+  return arr.reduce((acc, val) => {
+    return acc.concat(Array.isArray(val) ? flattenArray(val, depth - 1) : val);
+  }, []);
+}
+
+const nestedArray = [1, [2, [3, [4]]]];
+const depth = 2;
+const flattened = flattenArray(nestedArray, depth);
+console.log(flattened);
+
 
 
