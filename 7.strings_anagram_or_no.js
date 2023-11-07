@@ -1,3 +1,4 @@
+//--------------------------------Example-1--------------------------------------------------------//
 // check given two strings are anagram or not
 let str1 = "abcdda";
 let str2 = "bcadad";
@@ -11,3 +12,26 @@ if(s1 == s2) {
   console.log('not a anagram');
 
 }
+
+
+
+
+//---------------------------------------------Example-2---------------------------------------------------------------------
+// Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+  
+var strs = ["eat","tea","tan","ate","nat","bat"]
+//Output: [["bat"],["nat","tan"],["ate","eat","tea"]];
+function groupAnagrams(strs) {
+  var anagramGroup = {};
+  for(let str of strs ) {
+    let ch = str.split('').sort().join('').toLocaleLowerCase();
+    if(!anagramGroup[ch]) {
+      anagramGroup[ch] =[str];
+   }  else {
+       anagramGroup[ch].push(str); 
+   }
+ }
+ return Object.values(anagramGroup);
+}
+
+console.log(groupAnagrams(strs))
