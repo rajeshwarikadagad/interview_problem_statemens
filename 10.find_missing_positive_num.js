@@ -18,13 +18,18 @@ arr.forEach(item => {
 /* method-2 */
 //sort the given array and find the index of first positive element
 
-let sortedArr = arr.sort((a,b) => a-b);
-let index= sortedArr.findIndex(element => element>0);
-for(let i=index; i< sortedArr.length+1; i++) {
-    if(sortedArr[i] !== missingNum) {
-      console.log('missingNum', missingNum);
-      break;
-    } else {
-      missingNum++;
-    }
-}
+        var posNum =1;
+        var uniqArr = Array(...new Set(A));
+        var sortedArray = uniqArr.sort((a,b)=> a-b);
+        var start = sortedArray.findIndex(item => item>0);
+
+        if (start == -1) return 1;
+        
+        for(i=start;i<sortedArray.length;i++) {
+            if(posNum !== sortedArray[i] ) {
+                break;
+            } else {
+                ++posNum;
+            }
+        }
+        return posNum;
