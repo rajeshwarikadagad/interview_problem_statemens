@@ -10,6 +10,8 @@ typeof true // "boolean"
 
 typeof "foo" // "string"
 
+typeof NaN // "number"
+
 typeof Symbol("id") // "symbol"
 
 typeof Math // "object"  (1)
