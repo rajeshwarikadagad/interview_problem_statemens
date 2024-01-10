@@ -1,0 +1,34 @@
+// write a css program where on hover of Button-1 the Button-2 should get highlight
+
+
+
+//--------HTML---------
+<button 
+onmouseenter="mouseEnter()" 
+onmouseleave="mouseLeave()" 
+id="btn1">
+    Button 1
+</button>
+
+<button  id="btn2">
+Button 2
+</button>
+
+
+//--------CSS---------
+#btn1:hover {
+  cursor:pointer;
+}
+
+
+//--------JavaScript---------
+
+function  mouseEnter(){
+    console.log('mouse enter')
+    document.getElementById('btn2').style.background = 'yellow';
+  }
+    
+  function  mouseLeave(){
+      console.log('mouse leave')
+      document.getElementById('btn2').style.background = 'none';
+ }
