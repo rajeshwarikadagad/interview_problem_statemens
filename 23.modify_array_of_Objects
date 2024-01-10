@@ -30,3 +30,44 @@ for(let i=0; i<sortedArr.length && minNum <=maxNum; i++) {
   minNum++;
 }
 console.log(JSON.stringify(sortedArr));
+
+
+//----------------------------------------looping over nested Object--------------------------------------------------------//
+const data = {
+  "name": "John",
+  "age": 30,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "555-555-1234"
+    },
+    {
+      "type": "work",
+      "number": "555-555-5678"
+    }
+  ]
+};
+
+function recursiveFun(obj) {
+ for(key in obj) {
+  
+  if(typeof obj[key] == 'object') {
+    recursiveFun(obj[key]);
+  } else if(Array.isArray(obj[key])) {
+      for(let i=0; i<obj[key].length; i++) {
+         recursiveFun(obj[key][i])
+      }
+  } else {
+    console.log(obj[key])
+  }
+  
+ }
+}
+
+recursiveFun(data);
