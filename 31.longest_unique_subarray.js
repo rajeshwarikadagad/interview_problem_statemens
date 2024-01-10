@@ -1,6 +1,40 @@
 // find the longest unique sub array
 
+//--------------------- Method-1  ----------------------------------//
+function findLongestSubString(str) {
+  
+  let longestSubString = '';
+  
+  for(let i=0; i< str.length; i++) { 
+    let subStr = '';
+     
+    for(let j=i; j< str.length; j++) {
+      subStr += str[j];
+      isRepeated =false;
+       
+      subStr.split('').forEach((item, index) => {
+        if(subStr.indexOf(item) !== index) {
+          isRepeated =true;
+        }   
+      });
+          
+      if(!isRepeated && subStr.length > longestSubString.length) {
+        longestSubString = subStr;
+      }
+    }
+ }
+  return longestSubString;
+}
 
+
+
+
+
+let str = 'aabcbdef';
+
+console.log(findLongestSubString(str))
+
+//------------------------ Method -2 --------------------------------//
 
 
 function longestUniqueSubarray(str) {
