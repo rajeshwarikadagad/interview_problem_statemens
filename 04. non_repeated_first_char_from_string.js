@@ -14,7 +14,7 @@ let keysSorted =Object.keys(obj).find(item => obj[item] == 1)
 console.log(keysSorted);
 
 
-/****************************/
+/**********************************************************************************************************/
 let ch ='';
 let arr = str.toLowerCase().split('');
 for(let i =0; i<arr.length; i++) {
@@ -32,3 +32,19 @@ break ;
 }
 } 
 console.log(ch) ;
+
+
+
+/********************************************************************************/
+
+
+function firstNonRepeatingChar(str) {
+    for (const ch of str) {
+        if (str.indexOf(ch) === str.lastIndexOf(ch)) {
+            return ch;
+        }
+    }
+    return null;
+}
+
+console.log(firstNonRepeatingChar("aabbcdde")); // c
