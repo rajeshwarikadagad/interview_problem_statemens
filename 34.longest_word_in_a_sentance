@@ -1,0 +1,19 @@
+// find teh logest word in a given sentence
+
+
+sentance = "Jeans remain significantly more popular than chinos globally.
+Denim is a massive multi-billion-dollar global staple worn daily by a 
+large majority of consumers. While chinos enjoy steady demand for smart-casual and office wear, 
+jeans lead in overall market volume, everyday wear, and frequency of purchase.";
+
+//----------------------------------------- method -1 ---------------------------------------------------------//
+
+longestWord='';
+arr = sentance.split(/[ ,-]+/);    // OR  sentance.split(' '); 
+arr.forEach(word => {
+    if(word.length > longestWord.length){
+        longestWord = word;
+    }
+})
+
+console.log('longest word in the sentance: ', longestWord)
