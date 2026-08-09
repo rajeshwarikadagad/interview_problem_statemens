@@ -20,6 +20,24 @@ let obj =[
  }
  console.log(JSON.stringify(res));
 
+//----------------------------------------------------------------//
+
+function mergeObj(arr) {
+    let newObj={};
+    for(let i=0; i< arr.length; i++) {
+        let nameI =arr[i].name ;
+        let idI =arr[i].id;
+         if(idI in newObj){
+             let temp = newObj[idI];
+                 newObj[idI].name = [temp.name, nameI]
+         } else {
+             newObj[idI] ={id: idI, name: nameI}
+         }
+    }
+    return JSON.stringify(Object.values(newObj));
+}
+console.log(mergeObj(arr));
+
 /***********************/
 let obj2 =[];
 obj.forEach(item => {
