@@ -56,3 +56,19 @@ console.log(flattened);
 
 
 
+
+
+
+
+//---------------------------Find max num ------------------------------------//
+const arr = [10,20,[30,[40,50,[100]], 300], 90] ;
+
+function findMax(arr){
+    return arr.reduce((max, value) => {
+      let  currentMax = Array.isArray(value) ? findMax(value): Math.max(max,value);
+      return currentMax;
+    }, -Infinity)
+}
+console.log(findMax(arr));
+
+
