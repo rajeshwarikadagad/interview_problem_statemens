@@ -64,6 +64,26 @@ function myDisplay(location) {
 let res = myDisplay('Pune')('Ravi')('Sharma');
 console.log(res);
 
+
+//-------------------------------------------------------------------//
+
+//sum(5)(6)(7)() - It can have any number of arguments passed to it. Should also work for sum(5)(6)(7)(8)(9)() 
+
+function sum(num){
+let total = num;
+
+return function next(val) {
+    if(val === undefined) return total;
+    total += val;
+    return next;
+}
+}
+
+
+console.log(sum(1)(2)(3)());
+console.log(sum(3)(2)(1)(6)(8)(4)());
+
+
 //----------------------------------> Partial Application-------------------------------
 
 // Partial application allows us to fix a function's arguments. 
