@@ -44,4 +44,36 @@ for(let i=0; i<obj.length; i++) {
     }
   }
 }
-console.log(obj2)
+console.log(obj2);
+
+
+//-----------------------------------------------//
+ //outputs as:  [ { name: 'abc', score: 60 }, { name: 'pqr', score: 80 } ] 
+
+
+let arr = [ 
+
+  { name: "abc", score: 20 }, 
+
+  { name: "pqr", score: 30 }, 
+
+  { name: "abc", score: 40 }, 
+
+  { name: "pqr", score: 50 }, 
+
+]; 
+
+function mergeObj(arr) {
+    let newObj={};
+    for(let i=0; i< arr.length; i++) {
+        let name =arr[i].name ;
+        let score =arr[i].score;
+         if(name in newObj){
+             newObj[name] += score;
+         } else {
+             newObj[name]=score;
+         }
+    }
+    return [newObj];
+}
+console.log(mergeObj(arr));
